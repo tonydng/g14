@@ -143,32 +143,7 @@ https://gallery.sketchboard.me/team/tm_b0JcLw5D?s=BzSIP1YfdOuZ
   end
 </pre>
 <p>update file app/views/books/index.html.erb</p>
-<pre>
-	....
-	<table class="table table-striped">
-	  <thead>
-	    <tr>
-	      <th><%= model_class.human_attribute_name(:bookID) %></th>
-	      <th><%= model_class.human_attribute_name(:book_title) %></th>
-	      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <% @books.each do |book| %>
-	      <tr>
-	        <td><%= book.id %></td>
-	        <td><%= link_to book.book_title, book_path(book) %></td>
-	        ....
-	        
-	    <% end %>
-	  </tbody>
-	</table>
-
-	<%= link_to t('.new', :default => t("helpers.links.new")),
-	            new_book_path,
-	            :class => 'btn btn-primary' %>
-
-</pre>
+<p>https://github.com/tonydng/g14/blob/master/app/views/books/index.html.erb</p>
 <p>Select all books from app/controllers/boots_controller.rb</p>
 <pre>
 	class BooksController < ApplicationController
