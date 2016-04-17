@@ -10,6 +10,11 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    sql = ""
+    sql = "SELECT a.author_name FROM authors a, books b, book_authors ab " +
+          "WHERE a.author_id = ab.author_id AND ab.book_id = b.book_id"
+    @authors = @book.authors
+    @topics = @book.topics
   end
 
   # GET /books/new

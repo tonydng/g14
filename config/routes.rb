@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :topics
 
   root 'books#index'
+
+  resources :book_authors
+  resources :book_topics
 end

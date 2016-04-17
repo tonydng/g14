@@ -1,6 +1,6 @@
-class CreateBooksAuthors < ActiveRecord::Migration
+class CreateBookAuthors < ActiveRecord::Migration
   def change
-    create_table :books_authors, id: false do |t|
+    create_table :book_authors do |t|
       t.references :book, index: true, foreign_key: true
       t.references :author, index: true, foreign_key: true
 

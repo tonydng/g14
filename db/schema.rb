@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417010007) do
+ActiveRecord::Schema.define(version: 20160417055109) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "author_name"
@@ -19,31 +19,31 @@ ActiveRecord::Schema.define(version: 20160417010007) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "books", force: :cascade do |t|
-    t.string   "book_title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "books_authors", id: false, force: :cascade do |t|
+  create_table "book_authors", force: :cascade do |t|
     t.integer  "book_id"
     t.integer  "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "books_authors", ["author_id"], name: "index_books_authors_on_author_id"
-  add_index "books_authors", ["book_id"], name: "index_books_authors_on_book_id"
+  add_index "book_authors", ["author_id"], name: "index_book_authors_on_author_id"
+  add_index "book_authors", ["book_id"], name: "index_book_authors_on_book_id"
 
-  create_table "books_topics", id: false, force: :cascade do |t|
+  create_table "book_topics", force: :cascade do |t|
     t.integer  "book_id"
     t.integer  "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "books_topics", ["book_id"], name: "index_books_topics_on_book_id"
-  add_index "books_topics", ["topic_id"], name: "index_books_topics_on_topic_id"
+  add_index "book_topics", ["book_id"], name: "index_book_topics_on_book_id"
+  add_index "book_topics", ["topic_id"], name: "index_book_topics_on_topic_id"
+
+  create_table "books", force: :cascade do |t|
+    t.string   "book_title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "topics", force: :cascade do |t|
     t.string   "topic_name"

@@ -32,3 +32,10 @@
 <%= link_to 'New Book', new_book_path, :class => 'btn btn-primary' %> 
 <%= link_to 'New Author', new_author_path, :class => 'btn btn-default' %> 
 <%= link_to 'New Topic', new_topic_path, :class => 'btn btn-primary' %>
+<%= link_to "New Book's Authors", new_book_author_path, :class => 'btn btn-default' %>
+<%= link_to "New Book's Topics", new_book_topic_path, :class => 'btn btn-primary' %>
+<br><br>
+<%= link_to "List Authors", authors_path, :class => 'btn btn-default' %>
+<%= link_to "List Topics", topics_path, :class => 'btn btn-primary' %>
+<%= link_to "List Book's Authors", book_authors_path, :class => 'btn btn-default' %>
+<%= link_to "List Book's Topics", book_topics_path, :class => 'btn btn-primary' %>
