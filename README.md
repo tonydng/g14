@@ -124,6 +124,8 @@ https://gallery.sketchboard.me/team/tm_b0JcLw5D?s=BzSIP1YfdOuZ
 <p>Install bootstrap for a better UI</p>
 <p>$ rails g bootstrap:install static</p>
 <p>$ rails g bootstrap:themed books -f</p>
+<p>$ rails g bootstrap:themed authors -f</p>
+<p>$ rails g bootstrap:themed topics -f</p>
 <p>Modify app/controllers/books_controller.rb. So that when a new book created it redirect to root_path (home page)</p>
 <pre>
 	# POST /books
