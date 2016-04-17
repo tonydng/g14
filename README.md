@@ -1,7 +1,7 @@
 <h1>Group 14</h1>
 <p>https://github.com/tonydng/g14</p>
 <h3>Books Database ER</h3>
-https://gallery.sketchboard.me/team/tm_b0JcLw5D?s=BzSIP1YfdOuZ
+![alt tag](https://s3-eu-west-1.amazonaws.com/gallery-prod-4f50/img/6ee2f2b471494d3ca2314545a6cae40b.png)
 <hr>
 <p>Use Ruby on rails (https://www.railstutorial.org/book) for UI</p>
 <p>$ rails new g14</p>
