@@ -20,4 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        email: "E-mail address"
+    errors:
+      models:
+        book_author:
+          attributes:
+            book_id: 
+              blank: "ID is required!"
+            author_id:
+              blank: "ID is required!"
+        book_topic:
+          attributes:
+            book_id:
+              blank: "ID is required!"
+            topic_id:
+              blank: "ID is required!"
