@@ -1,5 +1,5 @@
 <h1>Group 14</h1>
-<p>https://github.com/tonydng/group14</p>
+<p>https://github.com/tonydng/g14</p>
 <h3>Books Database ER</h3>
 https://gallery.sketchboard.me/team/tm_b0JcLw5D?s=BzSIP1YfdOuZ
 <hr>
