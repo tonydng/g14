@@ -5,9 +5,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:bookid) %></th>
-      <th><%= model_class.human_attribute_name(:topicid) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= model_class.human_attribute_name(:"Book Id") %></th>
+      <th><%= model_class.human_attribute_name(:"Topic Id") %></th>      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
@@ -32,5 +31,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_book_topic_path,
             :class => 'btn btn-primary' %>
-<%= link_to 'Back to Home Page',
-                books_path, :class => 'btn btn-default' %>
+<%= link_to 'Back to Home Page', root_path, :class => 'btn btn-default' %>
