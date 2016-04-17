@@ -17,6 +17,7 @@ https://gallery.sketchboard.me/team/tm_b0JcLw5D?s=BzSIP1YfdOuZ
 	$ heroku login ...
 	$ heroku create g14
 	$ git push heroku master
+	$ heroku open
 </pre>
 <h3>Create Models</h3>
 <p>
