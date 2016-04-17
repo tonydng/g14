@@ -6,6 +6,18 @@ https://gallery.sketchboard.me/team/tm_b0JcLw5D?s=BzSIP1YfdOuZ
 <p>Use Ruby on rails (https://www.railstutorial.org/book) for UI</p>
 <p>$ rails new g14</p>
 <p>$ cd g14</p>
+<p>on github create a new repository, g14</p>
+<pre>
+	$ git init
+	$ git add README.md
+	$ git commit -m "first commit"
+	$ git remote add origin https://github.com/tonydng/g14.git
+	$ git push -u origin master
+
+	$ heroku login ...
+	$ heroku create g14
+	$ git push heroku master
+</pre>
 <h3>Create Models</h3>
 <p>
 	Primary keys - By default, Active Record will use an integer column named id as the table's primary key. When using Active Record Migrations to create your tables, this column will be automatically created.
