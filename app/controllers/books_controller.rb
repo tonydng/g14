@@ -12,8 +12,8 @@ class BooksController < ApplicationController
   def show
     sql = ""
     sql = "SELECT a.author_name FROM authors a, books b, book_authors ab " +
-          "WHERE a.author_id = ab.author_id AND ab.book_id = b.book_id"
-    @authors = @book.authors
+          "WHERE a.id = ab.author_id AND ab.book_id = b.id"
+    @authors = Book.find_by_sql(sql) #@book.authors
     @topics = @book.topics
   end
 
