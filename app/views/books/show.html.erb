@@ -11,12 +11,14 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:author_name) %></th>
     </tr>
   </thead>
   <tbody>
     <% @authors.each do |author| %>
       <tr>
+        <td><%= author.id %></td>
         <td><%= author.author_name %></td>
       </tr>
     <% end %>
@@ -26,12 +28,14 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:topic_name) %></th>
     </tr>
   </thead>
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
+        <td><%= topic.id %></td>
         <td><%= topic.topic_name %></td>
       </tr>
     <% end %>
