@@ -1,7 +1,7 @@
 <h1>Group 14</h1>
 <p>https://github.com/tonydng/g14</p>
 <h3>Books Database ER</h3>
-![Alt text](https://www.flickr.com/photos/142018434@N08/26276834680/in/dateposted)
+(https://www.flickr.com/photos/142018434@N08/26276834680/in/dateposted)
 <hr>
 <p>Use Ruby on rails (https://www.railstutorial.org/book) for UI</p>
 <p>$ rails new g14</p>
