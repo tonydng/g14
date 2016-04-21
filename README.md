@@ -1,6 +1,9 @@
 <h1>Group 14</h1>
 <p>https://github.com/tonydng/g14</p>
 <h3>Books Database ER</h3>
+(https://www.flickr.com/photos/142018434@N08/shares/9yf15z)
+<hr>
+<h3>Relational Models of Books Database</h3>
 (https://www.flickr.com/gp/142018434@N08/ZEC5S1)
 <hr>
 <p>Use Ruby on rails (https://www.railstutorial.org/book) for UI</p>
