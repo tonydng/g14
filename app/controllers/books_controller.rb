@@ -13,12 +13,12 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     publisher_sql = ""
-    publisher_sql = "SELECT * FROM publishers p, books b" + 
-                    " WHERE p.id = b.publisher_id AND b.id = #{@book.id}"
+    publisher_sql = "SELECT * FROM publishers p INNER JOIN books b" + 
+                    " ON p.id = b.publisher_id AND b.id = #{@book.id}"
     @publisher = Publisher.find_by_sql(publisher_sql)
 
     topic_sql = ""
-    topic_sql = "SELECT * FROM topics p, books b" + 
+    topic_sql = "SELECT * FROM topics p INNER JOIN books b" + 
                 " ON p.id = b.topic_id AND b.id = #{@book.id}"
     @topic = Topic.find_by_sql(topic_sql)
   end
