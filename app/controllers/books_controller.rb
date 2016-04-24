@@ -18,8 +18,8 @@ class BooksController < ApplicationController
     @publisher = Publisher.find_by_sql(publisher_sql)
 
     topic_sql = ""
-    topic_sql = "SELECT * FROM topics p INNER JOIN books b" + 
-                " ON p.id = b.topic_id AND b.id = #{@book.id}"
+    topic_sql = "SELECT * FROM topics t INNER JOIN books b" + 
+                " ON t.id = b.topic_id AND b.id = #{@book.id}"
     @topic = Topic.find_by_sql(topic_sql)
   end
 
