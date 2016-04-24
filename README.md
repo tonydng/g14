@@ -448,7 +448,7 @@
 
       authors_sql = ""
       authors_sql = "SELECT * FROM authors a INNER JOIN book_authors ba" + 
-                " ON a.id = ba.author_id AND
+                " ON a.id = ba.author_id AND ba.book_id = #{@book.id}"
       @authors = Book.find_by_sql(authors_sql)
     end
 
