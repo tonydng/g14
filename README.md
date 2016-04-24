@@ -6,11 +6,14 @@
 <h3>Relational Models of Books Database</h3>
 ![alt tag](https://s3-eu-west-1.amazonaws.com/gallery-prod-4f50/img/6ee2f2b471494d3ca2314545a6cae40b.png)
 <hr>
-<p>Use Ruby on rails (https://www.railstutorial.org/book) for UI</p>
+<p>Use <a href="https://www.railstutorial.org/book">Ruby on rails Tutorial</a> for UI</p>
 <p>We assume that you already had <a href="https://github.com/">github.com account</a>, <a href="https://www.heroku.com/">heroku.com account</a> and <a href="http://rubyonrails.org/">Ruby on Rails</a> installing in your PC/Mac</p>
+
 <h4>All instructions bellow using for Mac / linux computer only:</h4>
+
 <p>$ rails new g14</p>
 <p>$ cd g14</p>
+
 <h3>Create Models (Database Tables)</h3>
 <p>
 	Primary keys - By default, Active Record will use an integer column named id as the table's primary key. When using Active Record Migrations to create your tables, this column will be automatically created.
@@ -20,7 +23,7 @@
 <p>$ rake db:migrate</p>
 <p>After 2 above commands, Rails will run automatically an equivalent query behind the scenes for us:</p>
 <pre>
-	 CREATE TABLE "publishers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+	 CREATE TABLE "publishers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 </pre>
 
 <h4>Create Topic Model</h4>
@@ -28,7 +31,7 @@
 <p>$ rake db:migrate</p>
 <p>Similarly, after 2 above commands, Rails will run automatically an equivalent query behind the scenes for us:</p>
 <pre>
-	 CREATE TABLE "topics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "topic_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+	 CREATE TABLE "topics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "topic_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 </pre>
 
 <h4>Create Author Model</h4>
@@ -36,28 +39,28 @@
 <p>$ rake db:migrate</p>
 <p>Similarly, after 2 above commands, Rails will run automatically an equivalent query behind the scenes for us:</p>
 <pre>
-	 CREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+	 CREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 </pre>
 
 <h4>Create Book Model</h4>
-<p>$ rails g model book_name references:publisher references:topic</p>
+<p>$ rails g model book book_name references:publisher references:topic</p>
 <p>$ rake db:migrate</p>
 <p>Similarly, after 2 above commands, Rails will run automatically an equivalent query behind the scenes for us:</p>
 <pre>
-	CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_name" varchar, "publisher_id" integer, "topic_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL
+	CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_name" varchar, "publisher_id" integer, "topic_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 </pre>
 
-<h4>Create BookAuthors Model withoud id</h4>
-<p>$ rails g model books_authors book:references author:references</p>
+<h4>Create BookAuthor Model</h4>
+<p>$ rails g model book_author book:references author:references</p>
 <p>$ rake db:migrate</p>
 <p>Similarly, after 2 above commands, Rails will run automatically an equivalent query behind the scenes for us:</p>
 <pre>
-	CREATE TABLE "book_authors" ("book_id" integer, "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+	CREATE TABLE "book_authors" ("book_id" integer, "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 </pre>
 
 <h4>Validations (constraints)</h4>
-<p>A book must have a book_name, a publisher, a topic and an author</p>
-<p>Update files app/models/book.rb and app/models/book_author.rb</p>
+<p>A book must have a book_name, a publisher_id, a topic_id and authors </p>
+<p>Update file app/models/book.rb</p>
 <pre>
 	class Book < ActiveRecord::Base
 	  belongs_to :publisher
@@ -70,33 +73,6 @@
 	  # a book must have a book name
 	  validates :book_name, presence: true
 	end
-
-	class BookAuthor < ActiveRecord::Base
-	  belongs_to :book
-	  belongs_to :author
-
-	  validates_uniqueness_of :author_id, scope: :book_id
-	end
-</pre>
-<h4>on github create a new repository, g14</h4>
-<pre>
-	$ git init
-	$ git add README.md
-	$ git commit -m "first commit"
-	$ git remote add origin https://github.com/tonydng/g14.git
-	$ git push -u origin master
-
-	$ heroku login ...
-	$ heroku create g14
-	
-</pre>
-
-<h3>Create book table (model)</h3>
-<p>$ rails g model book book_tile</p>
-<p>$ rake db:migrate</p>
-<p>After two commands above, Rails automatically create a query SQL behind the scenes for us:</p>
-<pre>
-	CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
 </pre>
 
 <h4>Populate data</h4>
@@ -341,20 +317,23 @@
 	end
 </pre>
 <p>$ bundle update</p>
+
 <h4>Create Views and Controllers</h4>
-<p>$ rails g scaffold_controller book book_title</p>
 <p>$ rails g scaffold_controller publisher name location</p>
 <p>$ rails g scaffold_controller topic topic_name</p>
-<p>$ rails g scaffold_controller authoe author_name</p>
+<p>$ rails g scaffold_controller author author_name</p>
 <p>$ rails g scaffold_controller book book_name publisher:references topic:references</p>
 <p>$ rails g scaffold_controller book_author book:references author:references</p>
+
 <p>Update file config/routes.rb as following:</p>
 <pre>
 	Rails.application.routes.draw do
-	  resources :books
-	  resources :authors
-	  resources :topics
+	 
 	  resources :publishers
+	  resources :topics
+	  resources :authors
+	  resources :books
+	  resources :book_authors
 
 	  root 'books#index'
 	end
@@ -384,7 +363,7 @@
     end
   end
 </pre>
-<p>Modify app/controllers/book_authors_controller.rb. So that when a new book created it redirect to root_path (home page)</p>
+<p>Modify app/controllers/book_authors_controller.rb. So that when a new book_author created it redirect to root_path (home page)</p>
 <pre>
 	# POST /book_authors
   # POST /book_authors.json
@@ -416,7 +395,15 @@
 	  ....
 	end
 </pre>
-
+<h4>on github create a new repository, g14</h4>
+<pre>
+	$ git init
+	$ git add README.md
+	$ git commit -m "first commit"
+	$ git remote add origin https://github.com/tonydng/g14.git
+	$ git push -u origin master
+	
+</pre>
 <h4>Setup heroku for deployment</h4>
 <p>Update file config/environments/production.rb</p>
 <pre>
