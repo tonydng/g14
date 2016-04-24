@@ -445,6 +445,7 @@
         <p>1. SELECT all books, then store them into an array, @books, for Book Index View</p>
         <p>2. SELECT all attributes of a publisher belonging to a @book.id. Then store them to @publisher for Book Show View of @book.id</p>
         <p>3. SELECT all attributes of a topic belonging to a @book.id. Then store them to @topic for Book Show View of @book.id</p>
+        <p>4. SELECT all authors writing a book whose is @book.id. Then store them to @authors for Book Show View of @book.id</p>
         <pre>
           class BooksController < ApplicationController
             .....
@@ -469,6 +470,11 @@
               topic_sql = "SELECT * FROM topics t INNER JOIN books b" + 
                           " ON t.id = b.topic_id AND b.id = #{@book.id}"
               @topic = Topic.find_by_sql(topic_sql)
+
+              authors_sql = ""
+              authors_sql = "SELECT * FROM authors a INNER JOIN book_authors ba" + 
+                        " ON a.id = ba.author_id AND
+              @authors = Book.find_by_sql(authors_sql)
             end
 
             ....

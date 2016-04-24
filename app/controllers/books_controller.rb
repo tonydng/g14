@@ -21,6 +21,11 @@ class BooksController < ApplicationController
     topic_sql = "SELECT * FROM topics t INNER JOIN books b" + 
                 " ON t.id = b.topic_id AND b.id = #{@book.id}"
     @topic = Topic.find_by_sql(topic_sql)
+
+    authors_sql = ""
+    authors_sql = "SELECT * FROM authors a INNER JOIN book_authors ba" + 
+                " ON a.id = ba.author_id AND ba.book_id = #{@book.id}"
+    @authors = Book.find_by_sql(authors_sql)
   end
 
   # GET /books/new

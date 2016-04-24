@@ -12,14 +12,10 @@
   <dd><%= @book.topic_id %></dd>
 </dl>
 
-<%- model_class = Publisher -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:"Public Name") %></th>
       <th><%= model_class.human_attribute_name(:location) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>    </tr>
   </thead>
@@ -34,10 +30,6 @@
   </tbody>
 </table>
 
-<%- model_class = Topic -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -50,6 +42,23 @@
       <tr>
         <td><%= topic.topic_name %></td>
         <td><%=l topic.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:author_name) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.author_name %></td>
+        <td><%=l author.created_at %></td>
       </tr>
     <% end %>
   </tbody>
