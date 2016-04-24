@@ -12,8 +12,51 @@
   <dd><%= @book.topic_id %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              books_path, :class => 'btn btn-default'  %>
+<%- model_class = Publisher -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>    </tr>
+  </thead>
+  <tbody>
+    <% @publisher.each do |publisher| %>
+      <tr>
+        <td><%= publisher.name %></td>
+        <td><%= publisher.location %></td>
+        <td><%=l publisher.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%- model_class = Topic -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:topic_name) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @topic.each do |topic| %>
+      <tr>
+        <td><%= topic.topic_name %></td>
+        <td><%=l topic.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Back to List Books",
+              books_path, :class => 'btn btn-primary'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_book_path(@book), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -21,15 +64,3 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
-
-<%- model_class = Publisher -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
-
-<dl class="dl-horizontal">
-  <dt><strong>Name:</strong></dt>
-  <dd><%= @publisher_name %></dd>
-  <dt><strong>Location:</strong></dt>
-  <dd><%= @publisher_location %></dd>
-</dl>

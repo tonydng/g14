@@ -38,21 +38,6 @@
       <div class="span3">
         <h1>Group 14-SER 322-FINAL PROJECT, BOOKS DATABASE</h1>
         
-        <p><a href="https://github.com/tonydng/g14/tree/master/app" target="_blank">App Files</a></p>
-        <h3>Books Database ER TO BE UPDATED LATER</h3>
-        (https://www.flickr.com/photos/142018434@N08/shares/9yf15z)
-        <hr>
-        <h3>Relational Models of Books Database</h3>
-        <%= image_tag("group14.png") %>
-        <hr>
-        <p>Use <a href="https://www.railstutorial.org/book">Ruby on rails Tutorial</a> for UI</p>
-        <p>We assume that you already had <a href="https://github.com/">github.com account</a>, <a href="https://www.heroku.com/">heroku.com account</a> and <a href="http://rubyonrails.org/">Ruby on Rails</a> installing in your PC/Mac</p>
-
-        <h4>All instructions bellow using for Mac / linux computer only:</h4>
-
-        <p>$ rails new g14</p>
-        <p>$ cd g14</p>
-
         <h3>Create Models (Database Tables)</h3>
         <p>
           Primary keys - By default, Active Record will use an integer column named id as the table's primary key. When using Active Record Migrations to create your tables, this column will be automatically created.
@@ -98,7 +83,7 @@
         </pre>
 
         <h4>Validations (constraints)</h4>
-        <p>A book must have a book_name, a publisher_id, a topic_id and authors </p>
+
         <p>Update file app/models/book.rb</p>
         <pre>
           class Book < ActiveRecord::Base
@@ -111,6 +96,41 @@
             validates :publisher_id, :topic_id, presence: true
             # a book must have a book name
             validates :book_name, presence: true
+          end
+        </pre>
+
+        <p>Update file app/models/author.rb</p>
+        <pre>
+          class Author < ActiveRecord::Base
+            has_many :book_authors, dependent: :destroy
+            validates :author_name, presence: true
+          end
+        </pre>
+
+        <p>Update file app/models/publisher.rb</p>
+        <pre>
+          class Publisher < ActiveRecord::Base
+            has_many :books, dependent: :destroy
+            validates :name, presence: :true
+          end
+        </pre>
+
+        <p>Update file app/models/topic.rb</p>
+        <pre>
+          class Topic < ActiveRecord::Base
+            has_many :books, dependent: :destroy
+            validates :topic_name, presence: true
+          end
+        </pre>
+
+        <p>Update file app/models/book_author.rb</p>
+        <pre>
+          class BookAuthor < ActiveRecord::Base
+            belongs_to :book
+            belongs_to :author
+
+            validates :book_id, presence: true
+            validates :author_id, presence: true
           end
         </pre>
 
@@ -421,14 +441,34 @@
           end
         </pre>
         <p>update file app/views/books/index.html.erb</p>
-        <p>Select all books from app/controllers/boots_controller.rb: TO BE UPDATED - TIRED NOW</p>
+        <p>Select all books from app/controllers/boots_controller.rb:</p>
+        <p>1. SELECT all books, then store them into an array, @books, for Book Index View</p>
+        <p>2. SELECT all attributes of a publisher belonging to a @book.id. Then store them to @publisher for Book Show View of @book.id</p>
+        <p>3. SELECT all attributes of a topic belonging to a @book.id. Then store them to @topic for Book Show View of @book.id</p>
         <pre>
           class BooksController < ApplicationController
             .....
 
-            # GET /books/new
+            # GET /books
+            # GET /books.json
             def index
-              @book = Book.find_by_sql("SELECT * from books;")
+              all_books_sql = ""
+              all_books_sql = "SELECT * FROM books"
+              @books = Book.find_by_sql(all_books_sql)
+            end
+
+            # GET /books/1
+            # GET /books/1.json
+            def show
+              publisher_sql = ""
+              publisher_sql = "SELECT * FROM publishers p, books b" + 
+                              " WHERE p.id = b.publisher_id AND b.id = #{@book.id}"
+              @publisher = Publisher.find_by_sql(publisher_sql)
+
+              topic_sql = ""
+              topic_sql = "SELECT * FROM topics p, books b" + 
+                          " ON p.id = b.topic_id AND b.id = #{@book.id}"
+              @topic = Topic.find_by_sql(topic_sql)
             end
 
             ....

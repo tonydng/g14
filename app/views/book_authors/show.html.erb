@@ -10,8 +10,8 @@
   <dd><%= @book_author.author_id %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              book_authors_path, :class => 'btn btn-default'  %>
+<%= link_to "Back to List Book's Authors", 
+              book_authors_path, :class => 'btn btn-primary'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_book_author_path(@book_author), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

@@ -417,15 +417,35 @@
   end
 </pre>
 <p>update file app/views/books/index.html.erb</p>
-<p>Select all books from app/controllers/boots_controller.rb: TO BE UPDATED - TIRED NOW</p>
+<p>Select all books from app/controllers/boots_controller.rb:</p>
+<p>1. SELECT all books, then store them into an array, @books, for Book Index View</p>
+<p>2. SELECT all attributes of a publisher belonging to a @book.id. Then store them to @publisher for Book Show View of @book.id</p>
+<p>3. SELECT all attributes of a topic belonging to a @book.id. Then store them to @topic for Book Show View of @book.id</p>
 <pre>
 	class BooksController < ApplicationController
 	  .....
 
-	  # GET /books/new
-	  def index
-	    @book = Book.find_by_sql("SELECT * from books;")
-	  end
+	  # GET /books
+    # GET /books.json
+    def index
+      all_books_sql = ""
+      all_books_sql = "SELECT * FROM books"
+      @books = Book.find_by_sql(all_books_sql)
+    end
+
+    # GET /books/1
+    # GET /books/1.json
+    def show
+      publisher_sql = ""
+      publisher_sql = "SELECT * FROM publishers p, books b" + 
+                      " WHERE p.id = b.publisher_id AND b.id = #{@book.id}"
+      @publisher = Publisher.find_by_sql(publisher_sql)
+
+      topic_sql = ""
+      topic_sql = "SELECT * FROM topics p, books b" + 
+                  " ON p.id = b.topic_id AND b.id = #{@book.id}"
+      @topic = Topic.find_by_sql(topic_sql)
+    end
 
 	  ....
 	end

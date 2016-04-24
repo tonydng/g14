@@ -8,8 +8,8 @@
   <dd><%= @topic.topic_name %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              topics_path, :class => 'btn btn-default'  %>
+<%= link_to "Back to List Topics", 
+              topics_path, :class => 'btn btn-primary'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_topic_path(@topic), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

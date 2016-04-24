@@ -12,15 +12,15 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    publisher_name_sql = ""
-    publisher_name_sql = "SELECT p.name FROM publishers p, books b" + 
-                        " WHERE p.id = b.publisher_id AND b.id = #{@book.id}"
-    @publisher_name = Book.find_by_sql(publisher_name_sql)
+    publisher_sql = ""
+    publisher_sql = "SELECT * FROM publishers p, books b" + 
+                    " WHERE p.id = b.publisher_id AND b.id = #{@book.id}"
+    @publisher = Publisher.find_by_sql(publisher_sql)
 
-    publisher_location_sql = ""
-    publisher_location_sql = "SELECT p.location FROM publishers p, books b" + 
-                            " WHERE p.id = b.publisher_id AND b.id = #{@book.id}"
-    @publisher_location = Book.find_by_sql(publisher_location_sql)
+    topic_sql = ""
+    topic_sql = "SELECT * FROM topics p, books b" + 
+                " ON p.id = b.topic_id AND b.id = #{@book.id}"
+    @topic = Topic.find_by_sql(topic_sql)
   end
 
   # GET /books/new

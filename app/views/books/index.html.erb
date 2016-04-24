@@ -7,8 +7,8 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:book_name) %></th>
-      <th><%= model_class.human_attribute_name(:publisher_id) %></th>
-      <th><%= model_class.human_attribute_name(:topic_id) %></th>
+      <th><%= model_class.human_attribute_name(:"Publisher ID") %></th>
+      <th><%= model_class.human_attribute_name(:"Topic ID") %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
