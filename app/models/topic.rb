@@ -1,5 +1,4 @@
 class Topic < ActiveRecord::Base
-	has_many :book_topics, dependent: :destroy
-	has_many :books, through: :book_topics
+	has_many :books, dependent: :destroy
 	validates :topic_name, presence: true
 end

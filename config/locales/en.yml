@@ -32,9 +32,9 @@ en:
               blank: "ID is required!"
             author_id:
               blank: "ID is required!"
-        book_topic:
+        book:
           attributes:
-            book_id:
+            publisher_id:
               blank: "ID is required!"
             topic_id:
               blank: "ID is required!"

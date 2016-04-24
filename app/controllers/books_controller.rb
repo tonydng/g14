@@ -4,23 +4,12 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.find_by_sql("SELECT * from books;")
+    @books = Book.all
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
-    authors_sql = ""
-    authors_sql = "SELECT * FROM authors a " +
-                  "INNER JOIN book_authors ba " +
-                  "ON a.id = ba.author_id AND ba.book_id = #{@book.id}"
-    @authors = Book.find_by_sql(authors_sql)
-
-    topics_sql = ""
-    topics_sql = "SELECT * FROM topics t " +
-                 "INNER JOIN book_topics bt " +
-                 "ON t.id = bt.topic_id AND bt.book_id = #{@book.id}"
-    @topics = Book.find_by_sql(topics_sql)
   end
 
   # GET /books/new
@@ -39,7 +28,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to root_path, notice: 'Book was successfully created.' }
+        format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
@@ -80,6 +69,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:book_title)
+      params.require(:book).permit(:book_name, :publisher_id, :topic_id)
     end
 end

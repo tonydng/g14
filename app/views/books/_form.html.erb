@@ -16,11 +16,25 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :book_title, :class => 'control-label col-lg-2' %>
+    <%= f.label :book_name, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :book_title, :class => 'form-control' %>
+      <%= f.text_field :book_name, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:book_title) %>
+    <%=f.error_span(:book_name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :publisher_id, "Publisher ID", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :publisher_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:publisher_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :topic_id, "Topic ID", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :topic_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:topic_id) %>
   </div>
 
   <div class="form-group">

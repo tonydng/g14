@@ -5,16 +5,22 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:"Book id") %></th>
-      <th><%= model_class.human_attribute_name(:book_title) %></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:book_name) %></th>
+      <th><%= model_class.human_attribute_name(:publisher_id) %></th>
+      <th><%= model_class.human_attribute_name(:topic_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= book.id %></td>
-        <td><%= link_to book.book_title, book_path(book) %></td>
+        <td><%= link_to book.id, book_path(book) %></td>
+        <td><%= book.book_name %></td>
+        <td><%= book.publisher_id %></td>
+        <td><%= book.topic_id %></td>
+        <td><%= book.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_book_path(book), :class => 'btn btn-default btn-xs' %>
@@ -32,10 +38,11 @@
 <%= link_to 'New Book', new_book_path, :class => 'btn btn-primary' %> 
 <%= link_to 'New Author', new_author_path, :class => 'btn btn-default' %> 
 <%= link_to 'New Topic', new_topic_path, :class => 'btn btn-primary' %>
-<%= link_to "New Book's Authors", new_book_author_path, :class => 'btn btn-default' %>
-<%= link_to "New Book's Topics", new_book_topic_path, :class => 'btn btn-primary' %>
+<%= link_to "New publisher", new_publisher_path, :class => 'btn btn-default' %>
+<%= link_to "New Book's Authors", new_book_author_path, :class => 'btn btn-primary' %>
 <br><br>
 <%= link_to "List Authors", authors_path, :class => 'btn btn-default' %>
 <%= link_to "List Topics", topics_path, :class => 'btn btn-primary' %>
-<%= link_to "List Book's Authors", book_authors_path, :class => 'btn btn-default' %>
-<%= link_to "List Book's Topics", book_topics_path, :class => 'btn btn-primary' %>
+<%= link_to "List Publishers", publishers_path, :class => 'btn btn-default' %>
+<%= link_to "List Book's Authors", book_authors_path, :class => 'btn btn-primary' %>
+

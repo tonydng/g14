@@ -4,43 +4,13 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:book_title) %>:</strong></dt>
-  <dd><%= @book.book_title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:book_name) %>:</strong></dt>
+  <dd><%= @book.book_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:publisher_id) %>:</strong></dt>
+  <dd><%= @book.publisher_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:topic_id) %>:</strong></dt>
+  <dd><%= @book.topic_id %></dd>
 </dl>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:author_name) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @authors.each do |author| %>
-      <tr>
-        <td><%= author.id %></td>
-        <td><%= author.author_name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:topic_name) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @topics.each do |topic| %>
-      <tr>
-        <td><%= topic.id %></td>
-        <td><%= topic.topic_name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               books_path, :class => 'btn btn-default'  %>

@@ -1,7 +1,56 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# populate publishers
+Publisher.create(name: "Scribner", location: "New York")
+Publisher.create(name: "World Library Classics", location: "California")
+Publisher.create(name: "Vintage", location: "New York")
+Publisher.create(name: "Addison-Wesley Proffesional", location: "New York")
+Publisher.create(name: "Apress", location: "New York")
+Publisher.create(name: "Wiley", location: "New Jersey")
+Publisher.create(name: "Thomas & Mercer", location: "Washington")
+Publisher.create(name: "Penguin Books", location: "UK")
+Publisher.create(name: "Fairy Tale Review Press", location: "Arizona")
+Publisher.create(name: "Random House Trade Paperbacks", location: "New York")
+
+# populate topics
+Topic.create(topic_name: "Fiction")
+Topic.create(topic_name: "Computer Science")
+Topic.create(topic_name: "Physical Science")
+Topic.create(topic_name: "Math")
+Topic.create(topic_name: "Travel")
+
+# populate authors
+Author.create(author_name: "Scott Fitzgerald")
+Author.create(author_name: "Tom McCarthy")
+Author.create(author_name: "Stephen G. Kochan")
+Author.create(author_name: "Clare Churcher")
+Author.create(author_name: "Karl F. Kuhn")
+Author.create(author_name: "Mark Ryan")
+Author.create(author_name: "Ian Fleming")
+Author.create(author_name: "Joy Williams")
+
+# populate book
+Book.create(book_name: "The Great Gatsby", publisher_id: 1, topic_id: 1)
+Book.create(book_name: "The Beautiful and Damned:  A Twentieht Century Classic", publisher_id: 2, topic_id: 1)
+Book.create(book_name: "C", publisher_id: 3, topic_id: 2)
+Book.create(book_name: "Programming in C (4th Edition) (Developer's Library)", publisher_id: 4, topic_id: 2)
+Book.create(book_name: "Beginning Database Design: From Novice to Professional", publisher_id: 5, topic_id: 2)
+Book.create(book_name: "Basic Physics: A Self-Teaching Guide", publisher_id: 6, topic_id: 3	)
+Book.create(book_name: "Calculus for Dummies", publisher_id: 6, topic_id: 4)
+Book.create(book_name: "Moonraker", publisher_id: 7, topic_id: 1)
+Book.create(book_name: "Dr. No", publisher_id: 7, topic_id: 1)
+Book.create(book_name: "Quantum of Solace: The Complete James Bond Short Stories", publisher_id: 8, topic_id: 1)
+Book.create(book_name: "The Changeling", publisher_id: 9, topic_id: 1)
+Book.create(book_name: "The Florida Keys: A History & Guide Tenth Edition", publisher_id: 10, topic_id: 5)
+
+# populate join table, book_authors
+BookAuthor.create(book_id: 1, author_id: 1)
+BookAuthor.create(book_id: 2, author_id: 1)
+BookAuthor.create(book_id: 3, author_id: 2)
+BookAuthor.create(book_id: 4, author_id: 3)
+BookAuthor.create(book_id: 5, author_id: 4)
+BookAuthor.create(book_id: 6, author_id: 5)
+BookAuthor.create(book_id: 7, author_id: 6)
+BookAuthor.create(book_id: 8, author_id: 7)
+BookAuthor.create(book_id: 9, author_id: 7)
+BookAuthor.create(book_id: 10, author_id: 7)
+BookAuthor.create(book_id: 11, author_id: 8)
+BookAuthor.create(book_id: 12, author_id: 8)
