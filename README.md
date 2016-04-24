@@ -1,5 +1,5 @@
 <h1>Group 14</h1>
-<p><a href="https://github.com/tonydng/g14" target="_blank">README on github.com</a></p>
+<p><a href="https://github.com/tonydng/g14/tree/master/app" target="_blank">App Files</a></p>
 <h3>Books Database ER TO BE UPDATED LATER</h3>
 (https://www.flickr.com/photos/142018434@N08/shares/9yf15z)
 <hr>
@@ -59,7 +59,7 @@
 </pre>
 
 <h4>Validations (constraints)</h4>
-<p>A book must have a book_name, a publisher_id, a topic_id and authors </p>
+
 <p>Update file app/models/book.rb</p>
 <pre>
 	class Book < ActiveRecord::Base
@@ -73,6 +73,41 @@
 	  # a book must have a book name
 	  validates :book_name, presence: true
 	end
+</pre>
+
+<p>Update file app/models/author.rb</p>
+<pre>
+  class Author < ActiveRecord::Base
+    has_many :book_authors, dependent: :destroy
+    validates :author_name, presence: true
+  end
+</pre>
+
+<p>Update file app/models/publisher.rb</p>
+<pre>
+  class Publisher < ActiveRecord::Base
+    has_many :books, dependent: :destroy
+    validates :name, presence: :true
+  end
+</pre>
+
+<p>Update file app/models/topic.rb</p>
+<pre>
+  class Topic < ActiveRecord::Base
+    has_many :books, dependent: :destroy
+    validates :topic_name, presence: true
+  end
+</pre>
+
+<p>Update file app/models/book_author.rb</p>
+<pre>
+  class BookAuthor < ActiveRecord::Base
+    belongs_to :book
+    belongs_to :author
+
+    validates :book_id, presence: true
+    validates :author_id, presence: true
+  end
 </pre>
 
 <h4>Populate data</h4>

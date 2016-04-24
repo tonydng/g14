@@ -6,9 +6,9 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:book_name) %>:</strong></dt>
   <dd><%= @book.book_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:publisher_id) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:"Publisher ID") %>:</strong></dt>
   <dd><%= @book.publisher_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:topic_id) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:"Topic ID") %>:</strong></dt>
   <dd><%= @book.topic_id %></dd>
 </dl>
 
@@ -21,3 +21,15 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+
+<%- model_class = Publisher -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Name:</strong></dt>
+  <dd><%= @publisher_name %></dd>
+  <dt><strong>Location:</strong></dt>
+  <dd><%= @publisher_location %></dd>
+</dl>

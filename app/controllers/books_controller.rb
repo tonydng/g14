@@ -4,12 +4,23 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    all_books_sql = ""
+    all_books_sql = "SELECT * FROM books"
+    @books = Book.find_by_sql(all_books_sql)
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+    publisher_name_sql = ""
+    publisher_name_sql = "SELECT p.name FROM publishers p, books b" + 
+                        " WHERE p.id = b.publisher_id AND b.id = #{@book.id}"
+    @publisher_name = Book.find_by_sql(publisher_name_sql)
+
+    publisher_location_sql = ""
+    publisher_location_sql = "SELECT p.location FROM publishers p, books b" + 
+                            " WHERE p.id = b.publisher_id AND b.id = #{@book.id}"
+    @publisher_location = Book.find_by_sql(publisher_location_sql)
   end
 
   # GET /books/new
