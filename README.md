@@ -9,7 +9,7 @@
 <p>Use <a href="https://www.railstutorial.org/book">Ruby on rails Tutorial</a> for UI</p>
 <p>We assume that you already had <a href="https://github.com/">github.com account</a>, <a href="https://www.heroku.com/">heroku.com account</a> and <a href="http://rubyonrails.org/">Ruby on Rails</a> installing in your PC/Mac</p>
 
-<h4>All instructions bellow using for Mac / linux computer only:</h4>
+<h4>INSTRUCTIONS:</h4>
 
 <p>$ rails new g14</p>
 <p>$ cd g14</p>
@@ -436,7 +436,7 @@
 </pre>
 
 <p>$ heroku login</p>
-<p>$ heroku create g14 (you have to use a different name because this name was in used.</p>
+<p>$ heroku create g14 (you have to use a different name because this name was alreadyå used.</p>
 <p>$ git push heroku master</p>
 <p>$ heroku run rake db:migrate</p>
 <p>$ heroku open</p>
