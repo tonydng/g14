@@ -410,7 +410,7 @@
 </pre>
 
 <p>$ heroku login</p>
-<p>$ heroku create g14 (you have to use a different name because this name was alreadyå used.</p>
+<p>$ heroku create g14 (you have to use a different name because this name was already used.</p>
 <p>$ git push heroku master</p>
 <p>$ heroku run rake db:migrate</p>
 <p>$ heroku open</p>
