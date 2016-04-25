@@ -8,94 +8,71 @@ CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_nam
 
 CREATE TABLE "book_authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 
-INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("World Library Classics", "California", "2016-04-25 00:50:20.397514", "2016-04-25 00:50:20.397514");  
-   
-INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Vintage", "New York", "2016-04-25 00:50:20.399774", "2016-04-25 00:50:20.399774");  
+INSERT INTO "publishers" 
+("name", "location", "created_at", "updated_at") 
+VALUES 
+("World Library Classics", "California", "2016-04-25 00:50:20.397514", "2016-04-25 00:50:20.397514"), 
+("Vintage", "New York", "2016-04-25 00:50:20.399774", "2016-04-25 00:50:20.399774"), 
+("Addison-Wesley Proffesional", "New York", "2016-04-25 00:50:20.401199", "2016-04-25 00:50:20.401199"),
+("Apress", "New York", "2016-04-25 00:50:20.402666", "2016-04-25 00:50:20.402666"),  
+("Wiley", "New Jersey", "2016-04-25 00:50:20.404148", "2016-04-25 00:50:20.404148"),
+("Thomas & Mercer", "Washington", "2016-04-25 00:50:20.406023", "2016-04-25 00:50:20.406023"),
+("Penguin Books", "UK", "2016-04-25 00:50:20.407422", "2016-04-25 00:50:20.407422"),
+("Fairy Tale Review Press", "Arizona", "2016-04-25 00:50:20.408771", "2016-04-25 00:50:20.408771"),
+("Random House Trade Paperbacks", "New York", "2016-04-25 00:50:20.410002", "2016-04-25 00:50:20.410002");
 
-INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Addison-Wesley Proffesional", "New York", "2016-04-25 00:50:20.401199", "2016-04-25 00:50:20.401199");
+INSERT INTO 
+"topics" 
+("topic_name", "created_at", "updated_at") 
+VALUES 
+("Fiction", "2016-04-25 00:50:20.414306", "2016-04-25 00:50:20.414306"),
+("Computer Science", "2016-04-25 00:50:20.415905", "2016-04-25 00:50:20.415905"),
+("Physical Science", "2016-04-25 00:50:20.417173", "2016-04-25 00:50:20.417173"),
+("Math", "2016-04-25 00:50:20.418309", "2016-04-25 00:50:20.418309"),
+("Travel", "2016-04-25 00:50:20.419428", "2016-04-25 00:50:20.419428");
 
-INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Apress", "New York", "2016-04-25 00:50:20.402666", "2016-04-25 00:50:20.402666");  
+INSERT INTO 
+"authors" 
+("author_name", "created_at", "updated_at") 
+VALUES 
+("Scott Fitzgerald", "2016-04-25 00:50:20.423696", "2016-04-25 00:50:20.423696"),
+("Tom McCarthy", "2016-04-25 00:50:20.425231", "2016-04-25 00:50:20.425231"),
+("Stephen G. Kochan", "2016-04-25 00:50:20.426506", "2016-04-25 00:50:20.426506"),
+("Clare Churcher", "2016-04-25 00:50:20.427741", "2016-04-25 00:50:20.427741"),
+("Karl F. Kuhn", "2016-04-25 00:50:20.428974", "2016-04-25 00:50:20.428974"),
+("Mark Ryan", "2016-04-25 00:50:20.430290", "2016-04-25 00:50:20.430290"),
+("Ian Fleming", "2016-04-25 00:50:20.431551", "2016-04-25 00:50:20.431551"),
+("Joy Williams", "2016-04-25 00:50:20.432957", "2016-04-25 00:50:20.432957");
+ 
+INSERT INTO 
+"books" 
+("book_name", "publisher_id", "topic_id", "created_at", "updated_at") 
+VALUES 
+("The Great Gatsby", 1, 1, "2016-04-25 00:50:20.440738", "2016-04-25 00:50:20.440738"),
+("The Beautiful and Damned:  A Twentieht Century Classic", 2, 1, "2016-04-25 00:50:20.442467", "2016-04-25 00:50:20.442467"),
+("C", 3, 2, "2016-04-25 00:50:20.443910", "2016-04-25 00:50:20.443910"),
+("Programming in C (4th Edition) (Developer's Library)", 4, 2, "2016-04-25 00:50:20.445336", "2016-04-25 00:50:20.445336"),
+("Beginning Database Design: From Novice to Professional", 5, 2, "2016-04-25 00:50:20.446631", "2016-04-25 00:50:20.446631"),
+("Basic Physics: A Self-Teaching Guide", 6, 3, "2016-04-25 00:50:20.447903", "2016-04-25 00:50:20.447903"),
+("Moonraker", 7, 1, "2016-04-25 00:50:20.450613", "2016-04-25 00:50:20.450613"),
+("Dr. No", 7, 1, "2016-04-25 00:50:20.452192", "2016-04-25 00:50:20.452192"),
+("Quantum of Solace: The Complete James Bond Short Stories", 8, 1, "2016-04-25 00:50:20.453612", "2016-04-25 00:50:20.453612"),
+("The Changeling", 9, 1, "2016-04-25 00:50:20.454977", "2016-04-25 00:50:20.454977"),
+("The Florida Keys: A History & Guide Tenth Edition", 10, 5, "2016-04-25 00:50:20.456494", "2016-04-25 00:50:20.456494");
 
-INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Wiley", "New Jersey", "2016-04-25 00:50:20.404148", "2016-04-25 00:50:20.404148");
-
-INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Thomas & Mercer", "Washington", "2016-04-25 00:50:20.406023", "2016-04-25 00:50:20.406023");
-
-INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Penguin Books", "UK", "2016-04-25 00:50:20.407422", "2016-04-25 00:50:20.407422");  
-
-INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Fairy Tale Review Press", "Arizona", "2016-04-25 00:50:20.408771", "2016-04-25 00:50:20.408771");
-
-INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Random House Trade Paperbacks", "New York", "2016-04-25 00:50:20.410002", "2016-04-25 00:50:20.410002");
-
-INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES ("Fiction", "2016-04-25 00:50:20.414306", "2016-04-25 00:50:20.414306");
-
-INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES ("Computer Science", "2016-04-25 00:50:20.415905", "2016-04-25 00:50:20.415905");
- 
-INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES ("Physical Science", "2016-04-25 00:50:20.417173", "2016-04-25 00:50:20.417173");
-
-INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES ("Math", "2016-04-25 00:50:20.418309", "2016-04-25 00:50:20.418309");
-
-INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES ("Travel", "2016-04-25 00:50:20.419428", "2016-04-25 00:50:20.419428");
-
-INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Scott Fitzgerald", "2016-04-25 00:50:20.423696", "2016-04-25 00:50:20.423696");
- 
-INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Tom McCarthy", "2016-04-25 00:50:20.425231", "2016-04-25 00:50:20.425231");
- 
-INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Stephen G. Kochan", "2016-04-25 00:50:20.426506", "2016-04-25 00:50:20.426506");
- 
-INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Clare Churcher", "2016-04-25 00:50:20.427741", "2016-04-25 00:50:20.427741");
- 
-INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Karl F. Kuhn", "2016-04-25 00:50:20.428974", "2016-04-25 00:50:20.428974");
-
-INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Mark Ryan", "2016-04-25 00:50:20.430290", "2016-04-25 00:50:20.430290");
- 
-INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Ian Fleming", "2016-04-25 00:50:20.431551", "2016-04-25 00:50:20.431551");
- 
-INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Joy Williams", "2016-04-25 00:50:20.432957", "2016-04-25 00:50:20.432957");
- 
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("The Great Gatsby", 1, 1, "2016-04-25 00:50:20.440738", "2016-04-25 00:50:20.440738");
-
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("The Beautiful and Damned:  A Twentieht Century Classic", 2, 1, "2016-04-25 00:50:20.442467", "2016-04-25 00:50:20.442467");
- 
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("C", 3, 2, "2016-04-25 00:50:20.443910", "2016-04-25 00:50:20.443910");
-
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Programming in C (4th Edition) (Developer's Library)", 4, 2, "2016-04-25 00:50:20.445336", "2016-04-25 00:50:20.445336");
- 
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Beginning Database Design: From Novice to Professional", 5, 2, "2016-04-25 00:50:20.446631", "2016-04-25 00:50:20.446631");
- 
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Basic Physics: A Self-Teaching Guide", 6, 3, "2016-04-25 00:50:20.447903", "2016-04-25 00:50:20.447903");
- 
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Calculus for Dummies", 6, 4, "2016-04-25 00:50:20.449252", "2016-04-25 00:50:20.449252");
- 
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Moonraker", 7, 1, "2016-04-25 00:50:20.450613", "2016-04-25 00:50:20.450613");
- 
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Dr. No", 7, 1, "2016-04-25 00:50:20.452192", "2016-04-25 00:50:20.452192");
- 
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Quantum of Solace: The Complete James Bond Short Stories", 8, 1, "2016-04-25 00:50:20.453612", "2016-04-25 00:50:20.453612");
-
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("The Changeling", 9, 1, "2016-04-25 00:50:20.454977", "2016-04-25 00:50:20.454977");
- 
-INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("The Florida Keys: A History & Guide Tenth Edition", 10, 5, "2016-04-25 00:50:20.456494", "2016-04-25 00:50:20.456494");
-
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (1, 1, "2016-04-25 00:50:20.465218", "2016-04-25 00:50:20.465218");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (2, 1, "2016-04-25 00:50:20.466743", "2016-04-25 00:50:20.466743");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (3, 2, "2016-04-25 00:50:20.468660", "2016-04-25 00:50:20.468660");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (4, 3, "2016-04-25 00:50:20.470056", "2016-04-25 00:50:20.470056");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (5, 4, "2016-04-25 00:50:20.471391", "2016-04-25 00:50:20.471391");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (6, 5, "2016-04-25 00:50:20.472764", "2016-04-25 00:50:20.472764");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (7, 6, "2016-04-25 00:50:20.474102", "2016-04-25 00:50:20.474102");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (8, 7, "2016-04-25 00:50:20.475462", "2016-04-25 00:50:20.475462");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (9, 7, "2016-04-25 00:50:20.476740", "2016-04-25 00:50:20.476740");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (10, 7, "2016-04-25 00:50:20.478092", "2016-04-25 00:50:20.478092");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (11, 8, "2016-04-25 00:50:20.479515", "2016-04-25 00:50:20.479515");
- 
-INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (12, 8, "2016-04-25 00:50:20.480838", "2016-04-25 00:50:20.480838");
+INSERT INTO 
+"book_authors" 
+("book_id", "author_id", "created_at", "updated_at") 
+VALUES 
+(1, 1, "2016-04-25 00:50:20.465218", "2016-04-25 00:50:20.465218"),
+(2, 1, "2016-04-25 00:50:20.466743", "2016-04-25 00:50:20.466743"),
+(3, 2, "2016-04-25 00:50:20.468660", "2016-04-25 00:50:20.468660"),
+(4, 3, "2016-04-25 00:50:20.470056", "2016-04-25 00:50:20.470056"),
+(5, 4, "2016-04-25 00:50:20.471391", "2016-04-25 00:50:20.471391"),
+(6, 5, "2016-04-25 00:50:20.472764", "2016-04-25 00:50:20.472764"),
+(7, 6, "2016-04-25 00:50:20.474102", "2016-04-25 00:50:20.474102"),
+(8, 7, "2016-04-25 00:50:20.475462", "2016-04-25 00:50:20.475462"),
+(9, 7, "2016-04-25 00:50:20.476740", "2016-04-25 00:50:20.476740"),
+(10, 7, "2016-04-25 00:50:20.478092", "2016-04-25 00:50:20.478092"),
+(11, 8, "2016-04-25 00:50:20.479515", "2016-04-25 00:50:20.479515"),
+(12, 8, "2016-04-25 00:50:20.480838", "2016-04-25 00:50:20.480838");
