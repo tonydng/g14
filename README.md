@@ -1,6 +1,6 @@
 <h1>Group 14</h1>
-<h3>Books Database ER TO BE UPDATED LATER</h3>
-(https://www.flickr.com/photos/142018434@N08/shares/9yf15z)
+<h3>Books Database E-R</h3>
+(https://mail.google.com/mail/u/1/#inbox/1543fbca50b5ff70?projector=1)
 <hr>
 <h3>Relational Models of Books Database</h3>
 ![alt tag](https://s3-eu-west-1.amazonaws.com/gallery-prod-4f50/img/6ee2f2b471494d3ca2314545a6cae40b.png)
