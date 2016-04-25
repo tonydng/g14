@@ -1,7 +1,7 @@
 <h1>Group 14</h1>
 <h3><a href="https://www.flickr.com/photos/142018434@N08/26039229884/in/shares-ghKouH/">Books Database Entity Relationship</a></h3>
 <hr>
-<h3>Relational Models of Books Database</h3>
+<h3>Book Database Models</h3>
 ![alt tag](https://s3-eu-west-1.amazonaws.com/gallery-prod-4f50/img/6ee2f2b471494d3ca2314545a6cae40b.png)
 <hr>
 <p>Use <a href="https://www.railstutorial.org/book">Ruby on rails Tutorial</a> for UI</p>
