@@ -174,147 +174,97 @@
 <p>$ rake db:seed</p>
 <p>After this command, Rails automatically create a query SQL behind the scenes for us:</p>
 <pre>
-	(0.0ms)  begin transaction
-	  SQL (0.2ms)  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Scribner"], ["location", "New York"], ["created_at", "2016-04-24 00:07:43.928849"], ["updated_at", "2016-04-24 00:07:43.928849"]]
-	   (2.4ms)  commit transaction
-	   (0.1ms)
-	SQL (0.2ms)  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "World Library Classics"], ["location", "California"], ["created_at", "2016-04-24 00:07:43.934042"], ["updated_at", "2016-04-24 00:07:43.934042"]]
-   (0.5ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Vintage"], ["location", "New York"], ["created_at", "2016-04-24 00:07:43.935766"], ["updated_at", "2016-04-24 00:07:43.935766"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Addison-Wesley Proffesional"], ["location", "New York"], ["created_at", "2016-04-24 00:07:43.937218"], ["updated_at", "2016-04-24 00:07:43.937218"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Apress"], ["location", "New York"], ["created_at", "2016-04-24 00:07:43.938691"], ["updated_at", "2016-04-24 00:07:43.938691"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Wiley"], ["location", "New Jersey"], ["created_at", "2016-04-24 00:07:43.940055"], ["updated_at", "2016-04-24 00:07:43.940055"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Thomas & Mercer"], ["location", "Washington"], ["created_at", "2016-04-24 00:07:43.941535"], ["updated_at", "2016-04-24 00:07:43.941535"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Penguin Books"], ["location", "UK"], ["created_at", "2016-04-24 00:07:43.942971"], ["updated_at", "2016-04-24 00:07:43.942971"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Fairy Tale Review Press"], ["location", "Arizona"], ["created_at", "2016-04-24 00:07:43.944273"], ["updated_at", "2016-04-24 00:07:43.944273"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Random House Trade Paperbacks"], ["location", "New York"], ["created_at", "2016-04-24 00:07:43.945528"], ["updated_at", "2016-04-24 00:07:43.945528"]]
-   (0.5ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.2ms)  INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["topic_name", "Fiction"], ["created_at", "2016-04-24 00:07:43.949715"], ["updated_at", "2016-04-24 00:07:43.949715"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["topic_name", "Computer Science"], ["created_at", "2016-04-24 00:07:43.951396"], ["updated_at", "2016-04-24 00:07:43.951396"]]
-   (0.3ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["topic_name", "Physical Science"], ["created_at", "2016-04-24 00:07:43.952686"], ["updated_at", "2016-04-24 00:07:43.952686"]]
-   (0.3ms)  commit transaction
-   (0.3ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["topic_name", "Math"], ["created_at", "2016-04-24 00:07:43.954215"], ["updated_at", "2016-04-24 00:07:43.954215"]]
-   (0.3ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["topic_name", "Travel"], ["created_at", "2016-04-24 00:07:43.955380"], ["updated_at", "2016-04-24 00:07:43.955380"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.2ms)  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["author_name", "Scott Fitzgerald"], ["created_at", "2016-04-24 00:07:43.959945"], ["updated_at", "2016-04-24 00:07:43.959945"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["author_name", "Tom McCarthy"], ["created_at", "2016-04-24 00:07:43.961448"], ["updated_at", "2016-04-24 00:07:43.961448"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["author_name", "Stephen G. Kochan"], ["created_at", "2016-04-24 00:07:43.962780"], ["updated_at", "2016-04-24 00:07:43.962780"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["author_name", "Clare Churcher"], ["created_at", "2016-04-24 00:07:43.964081"], ["updated_at", "2016-04-24 00:07:43.964081"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.2ms)  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["author_name", "Karl F. Kuhn"], ["created_at", "2016-04-24 00:07:43.965337"], ["updated_at", "2016-04-24 00:07:43.965337"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["author_name", "Mark Ryan"], ["created_at", "2016-04-24 00:07:43.967023"], ["updated_at", "2016-04-24 00:07:43.967023"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["author_name", "Ian Fleming"], ["created_at", "2016-04-24 00:07:43.968400"], ["updated_at", "2016-04-24 00:07:43.968400"]]
-   (0.5ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES (?, ?, ?)  [["author_name", "Joy Williams"], ["created_at", "2016-04-24 00:07:43.969791"], ["updated_at", "2016-04-24 00:07:43.969791"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.2ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "The Great Gatsby"], ["publisher_id", 1], ["topic_id", 1], ["created_at", "2016-04-24 00:07:43.977399"], ["updated_at", "2016-04-24 00:07:43.977399"]]
-   (0.5ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "The Beautiful and Damned:  A Twentieht Century Classic"], ["publisher_id", 2], ["topic_id", 1], ["created_at", "2016-04-24 00:07:43.979153"], ["updated_at", "2016-04-24 00:07:43.979153"]]
-   (0.5ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "C"], ["publisher_id", 3], ["topic_id", 2], ["created_at", "2016-04-24 00:07:43.980669"], ["updated_at", "2016-04-24 00:07:43.980669"]]
-   (0.5ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "Programming in C (4th Edition) (Developer's Library)"], ["publisher_id", 4], ["topic_id", 2], ["created_at", "2016-04-24 00:07:43.982155"], ["updated_at", "2016-04-24 00:07:43.982155"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "Beginning Database Design: From Novice to Professional"], ["publisher_id", 5], ["topic_id", 2], ["created_at", "2016-04-24 00:07:43.983583"], ["updated_at", "2016-04-24 00:07:43.983583"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "Basic Physics: A Self-Teaching Guide"], ["publisher_id", 6], ["topic_id", 3], ["created_at", "2016-04-24 00:07:43.985052"], ["updated_at", "2016-04-24 00:07:43.985052"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "Calculus for Dummies"], ["publisher_id", 6], ["topic_id", 4], ["created_at", "2016-04-24 00:07:43.986485"], ["updated_at", "2016-04-24 00:07:43.986485"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.2ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "Moonraker"], ["publisher_id", 7], ["topic_id", 1], ["created_at", "2016-04-24 00:07:43.988041"], ["updated_at", "2016-04-24 00:07:43.988041"]]
-   (0.5ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.2ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "Dr. No"], ["publisher_id", 7], ["topic_id", 1], ["created_at", "2016-04-24 00:07:43.989744"], ["updated_at", "2016-04-24 00:07:43.989744"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "Quantum of Solace: The Complete James Bond Short Stories"], ["publisher_id", 8], ["topic_id", 1], ["created_at", "2016-04-24 00:07:43.991343"], ["updated_at", "2016-04-24 00:07:43.991343"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "The Changeling"], ["publisher_id", 9], ["topic_id", 1], ["created_at", "2016-04-24 00:07:43.992711"], ["updated_at", "2016-04-24 00:07:43.992711"]]
-   (0.4ms)  commit transaction
-   (0.0ms)  begin transaction
-  SQL (0.1ms)  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["book_name", "The Florida Keys: A History & Guide Tenth Edition"], ["publisher_id", 10], ["topic_id", 5], ["created_at", "2016-04-24 00:07:43.994132"], ["updated_at", "2016-04-24 00:07:43.994132"]]
-   (0.5ms)  commit transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 1 AND "book_authors"."book_id" = 1) LIMIT 1
-   (0.0ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 1 AND "book_authors"."book_id" = 2) LIMIT 1
-   (0.0ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 2 AND "book_authors"."book_id" = 3) LIMIT 1
-   (0.0ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 3 AND "book_authors"."book_id" = 4) LIMIT 1
-   (0.0ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 4 AND "book_authors"."book_id" = 5) LIMIT 1
-   (0.0ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 5 AND "book_authors"."book_id" = 6) LIMIT 1
-   (0.0ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 6 AND "book_authors"."book_id" = 7) LIMIT 1
-   (0.0ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 7 AND "book_authors"."book_id" = 8) LIMIT 1
-   (0.1ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 7 AND "book_authors"."book_id" = 9) LIMIT 1
-   (0.0ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 7 AND "book_authors"."book_id" = 10) LIMIT 1
-   (0.0ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 8 AND "book_authors"."book_id" = 11) LIMIT 1
-   (0.0ms)  rollback transaction
-   (0.0ms)  begin transaction
-  BookAuthor Exists (0.1ms)  SELECT  1 AS one FROM "book_authors" WHERE ("book_authors"."author_id" = 8 AND "book_authors"."book_id" = 12) LIMIT 1
-   (0.0ms)  rollback transaction
+	INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("World Library Classics", "California", "2016-04-25 00:50:20.397514", "2016-04-25 00:50:20.397514");  
+   
+  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Vintage", "New York", "2016-04-25 00:50:20.399774", "2016-04-25 00:50:20.399774");  
+
+  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Addison-Wesley Proffesional", "New York", "2016-04-25 00:50:20.401199", "2016-04-25 00:50:20.401199");
+
+  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Apress", "New York", "2016-04-25 00:50:20.402666", "2016-04-25 00:50:20.402666");  
+
+  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Wiley", "New Jersey", "2016-04-25 00:50:20.404148", "2016-04-25 00:50:20.404148");
+
+  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Thomas & Mercer", "Washington", "2016-04-25 00:50:20.406023", "2016-04-25 00:50:20.406023");
+
+  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Penguin Books", "UK", "2016-04-25 00:50:20.407422", "2016-04-25 00:50:20.407422");  
+
+  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Fairy Tale Review Press", "Arizona", "2016-04-25 00:50:20.408771", "2016-04-25 00:50:20.408771");
+
+  INSERT INTO "publishers" ("name", "location", "created_at", "updated_at") VALUES ("Random House Trade Paperbacks", "New York", "2016-04-25 00:50:20.410002", "2016-04-25 00:50:20.410002");
+
+  INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES ("Fiction", "2016-04-25 00:50:20.414306", "2016-04-25 00:50:20.414306");
+
+  INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES ("Computer Science", "2016-04-25 00:50:20.415905", "2016-04-25 00:50:20.415905");
+   
+  INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES ("Physical Science", "2016-04-25 00:50:20.417173", "2016-04-25 00:50:20.417173");
+
+  INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES ("Math", "2016-04-25 00:50:20.418309", "2016-04-25 00:50:20.418309");
+
+  INSERT INTO "topics" ("topic_name", "created_at", "updated_at") VALUES ("Travel", "2016-04-25 00:50:20.419428", "2016-04-25 00:50:20.419428");
+
+  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Scott Fitzgerald", "2016-04-25 00:50:20.423696", "2016-04-25 00:50:20.423696");
+   
+  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Tom McCarthy", "2016-04-25 00:50:20.425231", "2016-04-25 00:50:20.425231");
+   
+  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Stephen G. Kochan", "2016-04-25 00:50:20.426506", "2016-04-25 00:50:20.426506");
+   
+  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Clare Churcher", "2016-04-25 00:50:20.427741", "2016-04-25 00:50:20.427741");
+   
+  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Karl F. Kuhn", "2016-04-25 00:50:20.428974", "2016-04-25 00:50:20.428974");
+
+  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Mark Ryan", "2016-04-25 00:50:20.430290", "2016-04-25 00:50:20.430290");
+   
+  SQL (0.1ms)  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Ian Fleming", "2016-04-25 00:50:20.431551", "2016-04-25 00:50:20.431551");
+   
+  SQL (0.1ms)  INSERT INTO "authors" ("author_name", "created_at", "updated_at") VALUES ("Joy Williams", "2016-04-25 00:50:20.432957", "2016-04-25 00:50:20.432957");
+   
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("The Great Gatsby", 1, 1, "2016-04-25 00:50:20.440738", "2016-04-25 00:50:20.440738");
+
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("The Beautiful and Damned:  A Twentieht Century Classic", 2, 1, "2016-04-25 00:50:20.442467", "2016-04-25 00:50:20.442467");
+   
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("C", 3, 2, "2016-04-25 00:50:20.443910", "2016-04-25 00:50:20.443910");
+
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Programming in C (4th Edition) (Developer's Library)", 4, 2, "2016-04-25 00:50:20.445336", "2016-04-25 00:50:20.445336");
+   
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Beginning Database Design: From Novice to Professional", 5, 2, "2016-04-25 00:50:20.446631", "2016-04-25 00:50:20.446631");
+   
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Basic Physics: A Self-Teaching Guide", 6, 3, "2016-04-25 00:50:20.447903", "2016-04-25 00:50:20.447903");
+   
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Calculus for Dummies", 6, 4, "2016-04-25 00:50:20.449252", "2016-04-25 00:50:20.449252");
+   
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Moonraker", 7, 1, "2016-04-25 00:50:20.450613", "2016-04-25 00:50:20.450613");
+   
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Dr. No", 7, 1, "2016-04-25 00:50:20.452192", "2016-04-25 00:50:20.452192");
+   
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("Quantum of Solace: The Complete James Bond Short Stories", 8, 1, "2016-04-25 00:50:20.453612", "2016-04-25 00:50:20.453612");
+
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("The Changeling", 9, 1, "2016-04-25 00:50:20.454977", "2016-04-25 00:50:20.454977");
+   
+  INSERT INTO "books" ("book_name", "publisher_id", "topic_id", "created_at", "updated_at") VALUES ("The Florida Keys: A History & Guide Tenth Edition", 10, 5, "2016-04-25 00:50:20.456494", "2016-04-25 00:50:20.456494");
+
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (1, 1, "2016-04-25 00:50:20.465218", "2016-04-25 00:50:20.465218");
+   
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (2, 1, "2016-04-25 00:50:20.466743", "2016-04-25 00:50:20.466743");
+   
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (3, 2, "2016-04-25 00:50:20.468660", "2016-04-25 00:50:20.468660");
+   
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (4, 3, "2016-04-25 00:50:20.470056", "2016-04-25 00:50:20.470056");
+   
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (5, 4, "2016-04-25 00:50:20.471391", "2016-04-25 00:50:20.471391");
+   
+  SQL (0.1ms)  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (6, 5, "2016-04-25 00:50:20.472764", "2016-04-25 00:50:20.472764");
+   
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (7, 6, "2016-04-25 00:50:20.474102", "2016-04-25 00:50:20.474102");
+   
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (8, 7, "2016-04-25 00:50:20.475462", "2016-04-25 00:50:20.475462");
+   
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (9, 7, "2016-04-25 00:50:20.476740", "2016-04-25 00:50:20.476740");
+   
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (10, 7, "2016-04-25 00:50:20.478092", "2016-04-25 00:50:20.478092");
+   
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (11, 8, "2016-04-25 00:50:20.479515", "2016-04-25 00:50:20.479515");
+   
+  INSERT INTO "book_authors" ("book_id", "author_id", "created_at", "updated_at") VALUES (12, 8, "2016-04-25 00:50:20.480838", "2016-04-25 00:50:20.480838");
 
 </pre>
 
@@ -418,11 +368,12 @@
 </pre>
 
 <h3>At 5 SELECT(s) Used For This Project</h3>
-<p>Update file app/controllers/boots_controller.rb:</p>
+
+<p>Update file app/controllers/books_controller.rb:</p>
 <p>1. SELECT all books, then store them into an array, @books, for Book Index View</p>
 <p>2. SELECT all attributes of a publisher belonging to a @book.id. Then store them to @publisher for Book Show View of @book.id</p>
 <p>3. SELECT all attributes of a topic belonging to a @book.id. Then store them to @topic for Book Show View of @book.id</p>
-<p>4. SELECT all authors writing a book whose is @book.id. Then store them to @authors for Book Show View of @book.id</p>
+<p>4. SELECT all authors writing a book whose id is @book.id. Then store them to @authors for Book Show View of @book.id</p>
 <pre>
 	class BooksController < ApplicationController
 	  .....
@@ -457,6 +408,30 @@
 	  ....
 	end
 </pre>
+
+<p>Update file app/controllers/publishers_controller.rb:</p>
+<p>5. SELECT all books publishing by a publisher whose id is @publisher.id. Then store them to @books for Publisher Show View of @publisher.id</p>
+<pre>
+  class PublishersController < ApplicationController
+    ....
+    # GET /publishers
+    # GET /publishers.json
+    def index
+      @publishers = Publisher.find_by_sql("SELECT * FROM publishers")
+    end
+
+    # GET /publishers/1
+    # GET /publishers/1.json
+    def show
+      books_sql = ""
+      books_sql = "SELECT * FROM books b, publishers p " +
+                  "WHERE b.publisher_id = p.id AND p.id = #{@publisher.id}"
+      @books = Book.find_by_sql(books_sql)
+    end
+    ....
+  end
+</pre>
+
 <h4>on github create a new repository, g14</h4>
 <pre>
 	$ git init
