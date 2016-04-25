@@ -432,6 +432,31 @@
             ....
           end
         </pre>
+
+        <p>Update file app/controllers/publishers_controller.rb:</p>
+        <p>5. SELECT all publishers, then store them into an array, @publishers, for Publisher Index View</p>
+        <p>6. SELECT all books publishing by a publisher whose id is @publisher.id. Then store them to @books for Publisher Show View of @publisher.id</p>
+        <pre>
+          class PublishersController < ApplicationController
+            ....
+            # GET /publishers
+            # GET /publishers.json
+            def index
+              @publishers = Publisher.find_by_sql("SELECT * FROM publishers")
+            end
+
+            # GET /publishers/1
+            # GET /publishers/1.json
+            def show
+              books_sql = ""
+              books_sql = "SELECT * FROM books b, publishers p " +
+                          "WHERE b.publisher_id = p.id AND p.id = #{@publisher.id}"
+              @books = Book.find_by_sql(books_sql)
+            end
+            ....
+          end
+        </pre>
+        
         <h4>on github create a new repository, g14</h4>
         <pre>
           $ git init

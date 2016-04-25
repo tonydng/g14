@@ -410,7 +410,8 @@
 </pre>
 
 <p>Update file app/controllers/publishers_controller.rb:</p>
-<p>5. SELECT all books publishing by a publisher whose id is @publisher.id. Then store them to @books for Publisher Show View of @publisher.id</p>
+<p>5. SELECT all publishers, then store them into an array, @publishers, for Publisher Index View</p>
+<p>6. SELECT all books publishing by a publisher whose id is @publisher.id. Then store them to @books for Publisher Show View of @publisher.id</p>
 <pre>
   class PublishersController < ApplicationController
     ....
