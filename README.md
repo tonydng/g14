@@ -416,6 +416,8 @@
     end
   end
 </pre>
+
+<h3>At 5 SELECT(s) Used For This Project</h3>
 <p>Update file app/controllers/boots_controller.rb:</p>
 <p>1. SELECT all books, then store them into an array, @books, for Book Index View</p>
 <p>2. SELECT all attributes of a publisher belonging to a @book.id. Then store them to @publisher for Book Show View of @book.id</p>
