@@ -1,5 +1,4 @@
 <h1>Group 14</h1>
-<p><a href="https://github.com/tonydng/g14/tree/master/app" target="_blank">App Files</a></p>
 <h3>Books Database ER TO BE UPDATED LATER</h3>
 (https://www.flickr.com/photos/142018434@N08/shares/9yf15z)
 <hr>
