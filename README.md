@@ -350,24 +350,6 @@
     end
   end
 </pre>
-<p>Modify app/controllers/book_authors_controller.rb. So that when a new book_author created it redirect to root_path (home page)</p>
-<pre>
-	# POST /book_authors
-  # POST /book_authors.json
-  def create
-    @book_author = BookAuthor.new(book_author_params)
-
-    respond_to do |format|
-      if @book_author.save
-        format.html { redirect_to root_path, notice: 'Book author was successfully created.' }
-        format.json { render :show, status: :created, location: @book_author }
-      else
-        format.html { render :new }
-        format.json { render json: @book_author.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-</pre>
 
 <h3>At 5 SELECT(s) Used For This Project</h3>
 
