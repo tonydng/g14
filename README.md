@@ -325,6 +325,8 @@
   end
 </pre>
 
+<p>Other <a href="https://github.com/tonydng/g14/tree/master/app/controllers">controllers</a> and <a href="https://github.com/tonydng/g14/tree/master/app/views">views</a>  are modified too</p>
+
 <h3>At 5 SELECT(s) Used For This Project</h3>
 
 <p>Update file app/controllers/books_controller.rb:</p>
