@@ -13,6 +13,8 @@
 
 <p>$ rails new g14</p>
 <p>$ cd g14</p>
+<p>rails s</p>
+<p>open a new browser at http://localhost:3000 for testing the website</p>
 
 <h3>Create Models (Database Tables)</h3>
 <p>
