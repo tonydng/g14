@@ -58,7 +58,7 @@
 	CREATE TABLE "book_authors" ("book_id" integer, "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 </pre>
 
-<h4>Validations (constraints)</h4>
+<h4>Validations</h4>
 
 <p>Update file app/models/book.rb</p>
 <pre>
@@ -110,10 +110,10 @@
   end
 </pre>
 
-<h4>Populate data</h4>
+<h4>Insert data into tables</h4>
 <p>Update seed file on db/seeds.rb</p>
 <pre>
-	# populate publishers
+	# insert data into publishers
 	Publisher.create(name: "Scribner", location: "New York")
 	Publisher.create(name: "World Library Classics", location: "California")
 	Publisher.create(name: "Vintage", location: "New York")
@@ -125,14 +125,14 @@
 	Publisher.create(name: "Fairy Tale Review Press", location: "Arizona")
 	Publisher.create(name: "Random House Trade Paperbacks", location: "New York")
 
-	# populate topics
+	# insert data into topics
 	Topic.create(topic_name: "Fiction")
 	Topic.create(topic_name: "Computer Science")
 	Topic.create(topic_name: "Physical Science")
 	Topic.create(topic_name: "Math")
 	Topic.create(topic_name: "Travel")
 
-	# populate authors
+	# insert data into authors
 	Author.create(author_name: "Scott Fitzgerald")
 	Author.create(author_name: "Tom McCarthy")
 	Author.create(author_name: "Stephen G. Kochan")
@@ -142,7 +142,7 @@
 	Author.create(author_name: "Ian Fleming")
 	Author.create(author_name: "Joy Williams")
 
-	# populate book
+	# insert data into books
 	Book.create(book_name: "The Great Gatsby", publisher_id: 1, topic_id: 1)
 	Book.create(book_name: "The Beautiful and Damned:  A Twentieht Century Classic", publisher_id: 2, topic_id: 1)
 	Book.create(book_name: "C", publisher_id: 3, topic_id: 2)
@@ -156,7 +156,7 @@
 	Book.create(book_name: "The Changeling", publisher_id: 9, topic_id: 1)
 	Book.create(book_name: "The Florida Keys: A History & Guide Tenth Edition", publisher_id: 10, topic_id: 5)
 
-	# populate join table, book_authors
+	# insert data into join table, book_authors
 	BookAuthor.create(book_id: 1, author_id: 1)
 	BookAuthor.create(book_id: 2, author_id: 1)
 	BookAuthor.create(book_id: 3, author_id: 2)
