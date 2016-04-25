@@ -18,7 +18,7 @@
 <p>
 	Primary keys - By default, Active Record will use an integer column named id as the table's primary key. When using Active Record Migrations to create your tables, this column will be automatically created.
 </p>
-<p><b>Note: </b>We use sqlite3 for development and postgresql for production on Heroku</p>
+<p><b>Note: </b>We use sqlite3 database for development and postgresql database for production on Heroku</p>
 <h4>Create Publisher Model</h4>
 <p>$ rails g model publisher name location</p>
 <p>$ rake db:migrate</p>
