@@ -299,7 +299,7 @@
 	  root 'books#index'
 	end
 </pre>
-<p>Install bootstrap for a better UI</p>
+<h4>Install bootstrap for a better UI</h4>
 <p>$ rails g bootstrap:install static</p>
 <p>$ rails g bootstrap:themed books -f</p>
 <p>$ rails g bootstrap:themed authors -f</p>
