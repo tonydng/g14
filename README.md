@@ -334,7 +334,7 @@
   end
 </pre>
 
-<p>Other <a href="https://github.com/tonydng/g14/tree/master/app/controllers">controllers</a> and <a href="https://github.com/tonydng/g14/tree/master/app/views">views</a>  are modified too</p>
+<p>Other <a href="https://github.com/tonydng/g14/tree/master/app/controllers">controllers</a> and <a href="https://github.com/tonydng/g14/tree/master/app/views">views</a>  are modified as needed.</p>
 
 <h3>At 5 SELECT(s) Used For This Project</h3>
 
