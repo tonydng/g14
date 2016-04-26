@@ -47,6 +47,10 @@
   </tbody>
 </table>
 
+<%- model_class = Author -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
+</div>
 <table class="table table-striped">
   <thead>
     <tr>

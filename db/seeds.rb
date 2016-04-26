@@ -43,6 +43,7 @@ Book.create(book_name: "The Florida Keys: A History & Guide Tenth Edition", publ
 
 # populate join table, book_authors
 BookAuthor.create(book_id: 1, author_id: 1)
+BookAuthor.create(book_id: 1, author_id: 2)
 BookAuthor.create(book_id: 2, author_id: 1)
 BookAuthor.create(book_id: 3, author_id: 2)
 BookAuthor.create(book_id: 4, author_id: 3)
