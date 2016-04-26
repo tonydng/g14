@@ -4,12 +4,16 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = Topic.find_by_sql("SELECT * from topics")
   end
 
   # GET /topics/1
   # GET /topics/1.json
   def show
+    books_sql = ""
+    books_sql = "SELECT * FROM books b, topics t " +
+                "WHERE b.topic_id = t.id AND t.id = #{@topic.id}"
+    @books = Book.find_by_sql(books_sql)
   end
 
   # GET /topics/new

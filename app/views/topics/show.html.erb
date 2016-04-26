@@ -8,6 +8,31 @@
   <dd><%= @topic.topic_name %></dd>
 </dl>
 
+<%- model_class = Book -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:book_name) %></th>
+      <th><%= model_class.human_attribute_name(:"Publisher ID") %></th>
+      <th><%= model_class.human_attribute_name(:"Topic ID") %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.book_name %></td>
+        <td><%= book.publisher_id %></td>
+        <td><%= book.topic_id %></td>
+        <td><%= book.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to "Back to List Topics", 
               topics_path, :class => 'btn btn-primary'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
