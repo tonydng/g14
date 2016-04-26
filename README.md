@@ -339,10 +339,10 @@
 <h3>At 5 SELECT(s) Used For This Project</h3>
 
 <p>Update file app/controllers/books_controller.rb:</p>
-<p>1. SELECT all books, then store them into an array, @books, for Book Index View</p>
-<p>2. SELECT all attributes of a publisher belonging to a @book.id. Then store them to @publisher for Book Show View of @book.id</p>
-<p>3. SELECT all attributes of a topic belonging to a @book.id. Then store them to @topic for Book Show View of @book.id</p>
-<p>4. SELECT all authors writing a book whose id is @book.id. Then store them to @authors for Book Show View of @book.id</p>
+<p>1. SELECT all books, then store them into an array, @books, for <a href="https://github.com/tonydng/g14/blob/master/app/views/books/index.html.erb" target="_blank">Book Index View</a></p>
+<p>2. SELECT all attributes of a publisher belonging to a @book.id. Then store them to @publisher for <a href="https://github.com/tonydng/g14/blob/master/app/views/books/show.html.erb" target="_blank">Book Show View</a> of @book.id</p>
+<p>3. SELECT all attributes of a topic belonging to a @book.id. Then store them to @topic for <a href="https://github.com/tonydng/g14/blob/master/app/views/books/show.html.erb" target="_blank">Book Show View</a> of @book.id</p>
+<p>4. SELECT all authors writing a book whose id is @book.id. Then store them to @authors for <a href="https://github.com/tonydng/g14/blob/master/app/views/books/show.html.erb" target="_blank">Book Show View</a> of @book.id</p>
 <pre>
 	class BooksController < ApplicationController
 	  .....
@@ -379,8 +379,8 @@
 </pre>
 
 <p>Update file app/controllers/publishers_controller.rb:</p>
-<p>5. SELECT all publishers, then store them into an array, @publishers, for Publisher Index View</p>
-<p>6. SELECT all books publishing by a publisher whose id is @publisher.id. Then store them to @books for Publisher Show View of @publisher.id</p>
+<p>5. SELECT all publishers, then store them into an array, @publishers, for <a href="https://github.com/tonydng/g14/blob/master/app/views/publishers/index.html.erb" target="_blank">Publisher Index View</a></p>
+<p>6. SELECT all books publishing by a publisher whose id is @publisher.id. Then store them to @books for <a href="https://github.com/tonydng/g14/blob/master/app/views/publishers/show.html.erb" target="_blank">Publisher show View</a> of @publisher.id</p>
 <pre>
   class PublishersController < ApplicationController
     ....
@@ -400,6 +400,55 @@
     end
     ....
   end
+</pre>
+
+<p>Update file app/controllers/topics_controller.rb:</p>
+<p>7. SELECT all topics, then store them into an array, @topics, for <a href="https://github.com/tonydng/g14/blob/master/app/views/topics/index.html.erb" target="_blank">Topic Index View</a></p>
+<p>8. SELECT all books about this topic whose id is @topic.id. Then store them to @books for <a href="https://github.com/tonydng/g14/blob/master/app/views/topics/show.html.erb" target="_blank">Topic Show View</a> of @topic.id</p>
+<pre>
+	class TopicsController < ApplicationController
+	  ...
+
+	  # GET /topics
+	  # GET /topics.json
+	  def index
+	    @topics = Topic.find_by_sql("SELECT * from topics")
+	  end
+
+	  # GET /topics/1
+	  # GET /topics/1.json
+	  def show
+	    books_sql = ""
+	    books_sql = "SELECT * FROM books b, topics t " +
+	                "WHERE b.topic_id = t.id AND t.id = #{@topic.id}"
+	    @books = Book.find_by_sql(books_sql)
+	  end
+	  ....
+	end
+</pre>
+
+<p>Update file app/controllers/authors_controller.rb:</p>
+<p>9. SELECT all authors, then store them into an array, @authors, for <a href="https://github.com/tonydng/g14/blob/master/app/views/authors/index.html.erb" target="_blank">Author Index View</a></p>
+<p>10. SELECT all books written by this author whose id is @author.id. Then store them to @books for <a href="https://github.com/tonydng/g14/blob/master/app/views/authors/show.html.erb" target="_blank">Author show View</a> of @author.id</p>
+<pre>
+	class AuthorsController < ApplicationController
+	  ....
+	  # GET /authors
+	  # GET /authors.json
+	  def index
+	    @authors = Author.find_by_sql("SELECT * FROM authors")
+	  end
+
+	  # GET /authors/1
+	  # GET /authors/1.json
+	  def show
+	    books_sql = ""
+	    books_sql = "SELECT * FROM books b INNER JOIN book_authors ba" + 
+	                " ON b.id = ba.book_id AND ba.author_id = #{@author.id}"
+	    @books = Author.find_by_sql(books_sql)
+	  end
+	  ....
+	end
 </pre>
 
 <h4>on github create a new repository, g14</h4>
