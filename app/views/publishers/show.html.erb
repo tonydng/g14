@@ -12,7 +12,7 @@
 
 <%- model_class = Book -%>
 <div class="page-header">
-  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %> were published by this publisher</h3>
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %> were published by <%= @publisher.name %> publisher:</h3>
 </div>
 <table class="table table-striped">
   <thead>
