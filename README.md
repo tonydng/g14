@@ -27,6 +27,14 @@
 	 CREATE TABLE "publishers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 </pre>
 
+<pre>
+	<h2 style="color: red;">Start over:</h2>
+	If you did something wrong, you can start over as the following:
+	$ rails destroy model publisher
+	$ rails destroy model foo
+	$ rails destroy scaffold_controller foo 
+</pre>
+
 <h4>Create Topic Model</h4>
 <p>$ rails g model topic topic_name</p>
 <p>$ rake db:migrate</p>
@@ -34,13 +42,7 @@
 <pre>
 	 CREATE TABLE "topics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "topic_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 </pre>
-<pre>
-	<h2>Start over:</h2>
-	If you did something wrong, you can start over as the following:
-	$ rails destroy model topic
-	$ rails destroy model foo
-	$ rails destroy scaffold_controller foo 
-</pre>
+
 <h4>Create Author Model</h4>
 <p>$ rails g model author author_name</p>
 <p>$ rake db:migrate</p>
