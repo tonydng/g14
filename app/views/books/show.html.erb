@@ -24,7 +24,7 @@
     <% @publisher.each do |publisher| %>
       <tr>
         <td><%= publisher.id %></td>
-        <td><%= publisher.name %></td>
+        <td><%= link_to publisher.name, publisher_path(publisher) %></td>
         <td><%= publisher.location %></td>
         <td><%=l publisher.created_at %></td>
       </tr>
@@ -44,7 +44,7 @@
     <% @topic.each do |topic| %>
       <tr>
         <td><%= topic.id %></td>
-        <td><%= topic.topic_name %></td>
+        <td><%= link_to topic.topic_name, topic_path(topic) %></td>
         <td><%=l topic.created_at %></td>
       </tr>
     <% end %>
