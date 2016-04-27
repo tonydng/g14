@@ -483,3 +483,10 @@
 <p>$ heroku run rake db:migrate</p>
 <p>$ heroku open</p>
 <p>https://g14.herokuapp.com/</p>
+<pre>
+	Next time if you update something in your app
+	$ git add .
+	$ git commit -m "update something"
+	$ git push
+	$ git push heroku
+</pre>
