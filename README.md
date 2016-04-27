@@ -361,17 +361,17 @@
     # GET /books/1.json
     def show
       publisher_sql = ""
-      publisher_sql = "SELECT * FROM publishers p INNER JOIN books b" + 
+      publisher_sql = "SELECT p.* FROM publishers p INNER JOIN books b" + 
                       " ON p.id = b.publisher_id AND b.id = #{@book.id}"
       @publisher = Publisher.find_by_sql(publisher_sql)
 
       topic_sql = ""
-      topic_sql = "SELECT * FROM topics t INNER JOIN books b" + 
+      topic_sql = "SELECT t.* FROM topics t INNER JOIN books b" + 
                   " ON t.id = b.topic_id AND b.id = #{@book.id}"
       @topic = Topic.find_by_sql(topic_sql)
 
       authors_sql = ""
-      authors_sql = "SELECT * FROM authors a INNER JOIN book_authors ba" + 
+      authors_sql = "SELECT a.* FROM authors a INNER JOIN book_authors ba" + 
                 " ON a.id = ba.author_id AND ba.book_id = #{@book.id}"
       @authors = Book.find_by_sql(authors_sql)
     end
@@ -396,7 +396,7 @@
     # GET /publishers/1.json
     def show
       books_sql = ""
-      books_sql = "SELECT * FROM books b, publishers p " +
+      books_sql = "SELECT b.* FROM books b, publishers p " +
                   "WHERE b.publisher_id = p.id AND p.id = #{@publisher.id}"
       @books = Book.find_by_sql(books_sql)
     end
@@ -421,7 +421,7 @@
 	  # GET /topics/1.json
 	  def show
 	    books_sql = ""
-	    books_sql = "SELECT * FROM books b, topics t " +
+	    books_sql = "SELECT b.* FROM books b, topics t " +
 	                "WHERE b.topic_id = t.id AND t.id = #{@topic.id}"
 	    @books = Book.find_by_sql(books_sql)
 	  end
@@ -445,7 +445,7 @@
 	  # GET /authors/1.json
 	  def show
 	    books_sql = ""
-	    books_sql = "SELECT * FROM books b INNER JOIN book_authors ba" + 
+	    books_sql = "SELECT b.* FROM books b INNER JOIN book_authors ba" + 
 	                " ON b.id = ba.book_id AND ba.author_id = #{@author.id}"
 	    @books = Author.find_by_sql(books_sql)
 	  end

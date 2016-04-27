@@ -11,7 +11,7 @@ class PublishersController < ApplicationController
   # GET /publishers/1.json
   def show
     books_sql = ""
-    books_sql = "SELECT * FROM books b, publishers p " +
+    books_sql = "SELECT b.* FROM books b, publishers p " +
                 "WHERE b.publisher_id = p.id AND p.id = #{@publisher.id}"
     @books = Book.find_by_sql(books_sql)
   end

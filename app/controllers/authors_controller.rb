@@ -11,7 +11,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1.json
   def show
     books_sql = ""
-    books_sql = "SELECT * FROM books b INNER JOIN book_authors ba" + 
+    books_sql = "SELECT b.* FROM books b INNER JOIN book_authors ba" + 
                 " ON b.id = ba.book_id AND ba.author_id = #{@author.id}"
     @books = Author.find_by_sql(books_sql)
   end
