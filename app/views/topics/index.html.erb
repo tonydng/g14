@@ -14,8 +14,8 @@
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
-        <td><%= link_to topic.id, topic_path(topic) %></td>
-        <td><%= topic.topic_name %></td>
+        <td><%= topic.id %></td>
+        <td><%= link_to topic.topic_name, topic_path(topic) %></td>
         <td><%=l topic.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
