@@ -10,7 +10,7 @@
 
 <%- model_class = Book -%>
 <div class="page-header">
-  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %> About <%= @topic.topic_name %>:</h3>
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %> About <b><%= @topic.topic_name %></b>:</h3>
 </div>
 <table class="table table-striped">
   <thead>
