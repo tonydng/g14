@@ -14,8 +14,8 @@
   <tbody>
     <% @authors.each do |author| %>
       <tr>
-        <td><%= link_to author.id, author_path(author) %></td>
-        <td><%= author.author_name %></td>
+        <td><%= author.id %></td>
+        <td><%= link_to author.author_name, author_path(author) %></td>
         <td><%=l author.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
