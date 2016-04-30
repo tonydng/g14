@@ -1,4 +1,13 @@
-<h1>Group 14</h1>
+<h1>Group 14 Contribution:</h1>
+<pre>
+	Dena Tapia: Book ER Design, Book Database model normalization, SQL Query scripts (create, insert, select), Deliverable 1 and Tested the whole UI to make sure that it will work as design.
+
+	James Stokke: Book ER Design, Book Database model normalization, SQL Query scripts (create, insert, select) and Tested the whole UI to make sure that it will work as design.
+
+	Tony Nguyen: Book ER Design, Book Database model normalization, SQL Query scripts (create, insert, select) and used the Ruby on Rails to create an UI that integrates our book database models to a web application.
+
+	Patrick Graham: Book ER Design, Book Database model normalization, SQL Query scripts (create, insert, select), Deliverable 2 and created Demo Video
+</pre>
 <h3><a href="https://www.flickr.com/photos/142018434@N08/26039229884/in/shares-ghKouH/">Book Database Entity Relationship</a></h3>
 <hr>
 <h3>Book Database Models</h3>
