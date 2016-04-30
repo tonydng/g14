@@ -30,9 +30,9 @@
 <p>$ rails g model publisher name location</p>
 <p>$ rake db:migrate</p>
 <p>After 2 above commands, Rails will run automatically an equivalent query behind the scenes for us:</p>
-<p>
+<pre>
 	 CREATE TABLE "publishers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-</p>
+</pre>
 
 <pre>
 	<h2 style="color: red;">Start over:</h2>
