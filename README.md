@@ -332,7 +332,7 @@
 <p>$ rails g bootstrap:themed topics -f</p>
 <p>$ rails g bootstrap:themed publishers -f</p>
 <p>$ rails g bootstrap:themed book_authors -f</p>
-<p>Modify app/controllers/books_controller.rb. So that when a new book created it redirect to root_path (home page)</p>
+<p>Modify app/controllers/books_controller.rb. So that when a new book created it redirects to root_path (home page)</p>
 <pre>
 	# POST /books
   # POST /books.json
