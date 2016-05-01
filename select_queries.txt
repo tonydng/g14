@@ -1,0 +1,85 @@
+/* 
+  	SELECT all books, then store them into an array, @books, for Book Index View 
+  	all_books_sql = ""
+  	all_books_sql = "SELECT * FROM books"
+  	@books = Book.find_by_sql(all_books_sql)
+*/
+SELECT * FROM  books;
+
+/*
+	SELECT all attributes of a publisher belonging to a @book.id. Then store them to @publisher for Book Show View of @book.id
+	publisher_sql = ""
+    publisher_sql = "SELECT p.* FROM publishers p INNER JOIN books b" + 
+                      " ON p.id = b.publisher_id AND b.id = #{@book.id}"
+    @publisher = Publisher.find_by_sql(publisher_sql)
+*/
+SELECT p.* FROM publishers p INNER JOIN books b
+ON p.id = b.publisher_id AND b.id = #{@book.id};
+
+/*
+	SELECT all attributes of a topic belonging to a @book.id. Then store them to @topic for Book Show View of @book.id
+	topic_sql = ""
+    topic_sql = "SELECT t.* FROM topics t INNER JOIN books b" + 
+                  " ON t.id = b.topic_id AND b.id = #{@book.id}"
+    @topic = Topic.find_by_sql(topic_sql)
+*/
+SELECT t.* FROM topics t INNER JOIN books b
+ON t.id = b.topic_id AND b.id = #{@book.id};
+
+/*
+	SELECT all authors writing a book whose id is @book.id. Then store them to @authors for Book Show View of @book.id
+	authors_sql = ""
+    authors_sql = "SELECT a.* FROM authors a INNER JOIN book_authors ba" + 
+                " ON a.id = ba.author_id AND ba.book_id = #{@book.id}"
+    @authors = Book.find_by_sql(authors_sql)
+*/
+SELECT a.* FROM authors a INNER JOIN book_authors ba
+ON a.id = ba.author_id AND ba.book_id = #{@book.id};
+
+/*
+	SELECT all publishers, then store them into an array, @publishers, for Publisher Index View
+	@publishers = Publisher.find_by_sql("SELECT * FROM publishers")
+*/
+SELECT * FROM publishers;
+
+/*
+	SELECT all books publishing by a publisher whose id is @publisher.id. Then store them to @books for Publisher show View of @publisher.id
+	books_sql = ""
+    books_sql = "SELECT b.* FROM books b, publishers p " +
+                  "WHERE b.publisher_id = p.id AND p.id = #{@publisher.id}"
+    @books = Book.find_by_sql(books_sql)
+*/
+SELECT b.* FROM books b, publishers p
+WHERE b.publisher_id = p.id AND p.id = #{@publisher.id};
+
+/*
+	SELECT all topics, then store them into an array, @topics, for Topic Index View
+	@topics = Topic.find_by_sql("SELECT * from topics")
+*/
+SELECT * FROM topics;
+
+/*
+	SELECT all books about this topic whose id is @topic.id. Then store them to @books for Topic Show View of @topic.id
+	books_sql = ""
+    books_sql = "SELECT b.* FROM books b, topics t " +
+                 "WHERE b.topic_id = t.id AND t.id = #{@topic.id}"
+    @books = Book.find_by_sql(books_sql)
+*/
+SELECT b.* FROM books b, topics t
+WHERE b.topic_id = t.id AND t.id = #{@topic.id};
+
+/*
+	SELECT all authors, then store them into an array, @authors, for Author Index View
+	@authors = Author.find_by_sql("SELECT * FROM authors")
+*/
+SELECT * FROM authors;
+
+/*
+	SELECT all books written by this author whose id is @author.id. Then store them to @books for Author show View of @author.id
+	books_sql = ""
+    books_sql = "SELECT b.* FROM books b INNER JOIN book_authors ba" + 
+               " ON b.id = ba.book_id AND ba.author_id = #{@author.id}"
+    @books = Author.find_by_sql(books_sql)
+*/
+ELECT b.* FROM books b INNER JOIN book_authors ba
+ON b.id = ba.book_id AND ba.author_id = #{@author.id};
