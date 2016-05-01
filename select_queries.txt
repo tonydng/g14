@@ -81,5 +81,5 @@ SELECT * FROM authors;
                " ON b.id = ba.book_id AND ba.author_id = #{@author.id}"
     @books = Author.find_by_sql(books_sql)
 */
-ELECT b.* FROM books b INNER JOIN book_authors ba
+SELECT b.* FROM books b INNER JOIN book_authors ba
 ON b.id = ba.book_id AND ba.author_id = #{@author.id};
